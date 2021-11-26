@@ -43,11 +43,16 @@
   local.get $0
   call $assembly/index/concat_world
   drop
+  local.get $0
+  i32.const 20
+  i32.sub
+  i32.load offset=16
+  i32.const 1
+  i32.shr_u
   global.get $~lib/memory/__stack_pointer
   i32.const 8
   i32.add
   global.set $~lib/memory/__stack_pointer
-  local.get $0
  )
  (func $export:assembly/index/concat_world (param $0 i32) (result i32)
   global.get $~lib/memory/__stack_pointer
